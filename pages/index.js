@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Head from 'next/head';
 import Sidebar from '../components/Sidebar';
 import Overview from '../components/Overview';
+import Construction from '../components/Construction';
 import styles from '../styles/Home.module.css';
 
 export const StoreContext = React.createContext({});
@@ -16,7 +17,9 @@ export default function Home() {
           <title>StartUp</title>
         </Head>
         <Sidebar/>
-        <Overview/>
+        { store.page === 'Overview'
+          ? <Overview/>
+          : <Construction/>}
       </div>
     </StoreContext.Provider>
   );
