@@ -13,7 +13,7 @@ export default function Home() {
   const [store, dispatch] = useReducer(reducer, initValue)
 
   useEffect(async () => {
-    await signIn('Uriel', '99')
+    await signIn('Uriel', '123')
   }, [dispatch]);
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function({data: {notes, ...rest}}) {
+export default function Footer({data: {notes, ...rest}}) {
     return (
         <div className='card'>
             {Object.entries(rest).map(([key, value]) => (

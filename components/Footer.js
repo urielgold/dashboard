@@ -7,18 +7,18 @@ export default function Footer() {
 
     const {store, dispatch} = useContext(StoreContext)
     const handleOnNext = () => {
-        if (store.nodes.length < store.totalCount && store.current.limit + 20 > store.nodes.length) {
+        if (store.nodes.length < store.totalCount && store.current.limit + 30 > store.nodes.length) {
             getCalls(store.nodes.length, 20).then(calls => {
                 dispatch({type: actions.ADD_CALLS, data: calls})
-                dispatch({type: actions.SET_CURRENT, data: {limit: store.current.offset, offset: store.current.offset + 12}})
+                dispatch({type: actions.SET_CURRENT, data: {limit: store.current.offset, offset: store.current.offset + 15}})
             })
         } else {
-            dispatch({type: actions.SET_CURRENT, data: {limit: store.current.offset, offset: store.current.offset + 12}})
+            dispatch({type: actions.SET_CURRENT, data: {limit: store.current.offset, offset: store.current.offset + 15}})
         }
     }
 
     const handleOnPrev = () => {
-        dispatch({type: actions.SET_CURRENT, data: {limit: store.current.limit - 12, offset: store.current.limit - 1}})
+        dispatch({type: actions.SET_CURRENT, data: {limit: store.current.limit - 15, offset: store.current.limit - 1}})
     }
     return (
         <div className='footer'>

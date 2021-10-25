@@ -4,16 +4,15 @@ import { StoreContext } from '../pages';
 import { actions } from '../Store/store';
 import Card from './Card'
 
-export default () => {
+export default function Content () {
     const {dispatch, store: {nodes, current}} = useContext(StoreContext);
 
     useEffect(async () => {
-        const calls = await getCalls(0, 20);
+        const calls = await getCalls(0, 30);
         dispatch({type: actions.ADD_CALLS, data: calls})
-        dispatch({type: actions.SET_CURRENT, data: {limit: 0, offset: 12}})
+        dispatch({type: actions.SET_CURRENT, data: {limit: 0, offset: 15}})
       }, []);
 
-      console.log(nodes)
     return (
         <div className='content'>
             {nodes.length > 0 
